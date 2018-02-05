@@ -1,9 +1,9 @@
+public class Facture
+{
 
-public class Facture {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	private int id_Facture;
+	private int id_Devis;
+	private int id_Client;
+	private int totalProduits_Facture;
+	private Double totalFacture;
 }
