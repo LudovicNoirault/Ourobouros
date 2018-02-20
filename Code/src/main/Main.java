@@ -1,12 +1,16 @@
 package main;
 
+
+
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.swing.*;
 
@@ -17,7 +21,7 @@ public class Main
 		JFrame fenetre = new JFrame();
 
 		fenetre.setTitle("Ouroboros");
-		
+
 		fenetre.setSize(600,400);
 		fenetre.setLocation(300,50);
 
@@ -26,9 +30,9 @@ public class Main
 		JButton button1 = new JButton("Enregistrement de Client");	
 		JButton button2= new JButton("Modification de client");		
 		JButton button3= new JButton("Suppression de Client");		
-		
+
 		JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
-		
+
 		panel.add(button1);
 		panel.add(button2);
 		panel.add(button3);
@@ -45,7 +49,6 @@ public class Main
 			public void actionPerformed(ActionEvent e)
 			{
 				lancerCreaClient();
-				connectionBDD();
 			}
 		});
 
@@ -63,7 +66,6 @@ public class Main
 			{
 				lancerSupprClient();
 			}
-
 		});
 	}
 
@@ -84,18 +86,17 @@ public class Main
 		JPanel panel2 = new JPanel();
 
 		panel2.setLayout(new BoxLayout(panel2, BoxLayout.LINE_AXIS));
-		
-		fenetre2.setContentPane(panel2);
 
+		fenetre2.setContentPane(panel2);
 		fenetre2.setVisible(true);
 
 		JPanel panelClient = new JPanel();
 		panelClient.setLayout(new BoxLayout(panelClient, BoxLayout.PAGE_AXIS));
-		
-		fenetre2.setTitle("Création d'un nouveau client");
 
+		fenetre2.setTitle("CrÃ©ation d'un nouveau client");
 		fenetre2.setSize(700,250);
 		fenetre2.setLocation(200,120);
+
 		JLabel titre = new JLabel("Veuillez saisir les informations.");
 
 		JLabel labelnomClient  = new JLabel("Nom de l'entreprise : ");
@@ -136,7 +137,6 @@ public class Main
 		JTextField villeLivr = new JTextField();
 		villeLivr.setColumns(10);
 
-		
 		JLabel labelpaysLivr  = new JLabel("Pays : ");
 		JTextField paysLivr = new JTextField();
 		paysLivr.setColumns(10);
@@ -189,19 +189,23 @@ public class Main
 		panelAddFact.add(villeFact);
 		panelAddFact.add(labelpaysFact);
 		panelAddFact.add(paysFact);
-		
+
 		JButton validerClient = new JButton("Enregistrer le client");
-		
+
 		panel2.add(panelClient);
 		panel2.add(panelAddLivr);
 		panel2.add(panelAddFact);
 		panel2.add(validerClient);
 
-//		validerClient.addActionListener(new ActionListener(){
-//			public void actionPerformed(ActionEvent e){
-//				set les values dans la bdd();
-//			}
-//		});
+		validerClient.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				ConnectToBDD connection = new ConnectToBDD();
+				connection.getConnection();
+				recuperInfosCreaClient();
+			}
+		});
 	}
 
 	public static void lancerModifClient()
@@ -226,7 +230,7 @@ public class Main
 		JButton validerModif = new JButton("Acceder au client a modifier");
 		panelModifClient.add(validerModif);
 
-		// Puis là va falloir rouvrir la fenetre de creation toute pré-remplie des infos du 
+		// Puis la  va falloir rouvrir la fenetre de creation toute pré-remplie des infos du 
 		// client mais je sais pas faire...
 	}
 
@@ -254,7 +258,7 @@ public class Main
 
 		JButton validerSuppr = new JButton("Supprimer le client");
 		panelSupprClient.add(validerSuppr);
-		
+
 //		validerSuppr.addActionListener(new ActionListener()
 //		{
 //		public void actionPerformed(ActionEvent e)
@@ -263,59 +267,21 @@ public class Main
 //			}
 //	});
 	}
-	public static void connectionBDD()
+	public static void recuperInfosCreaClient()
 	{
-
-
-		final String PASSWORD =	""	;
-		final String LOGIN =	"root"	;
-		final String  URL="jdbc:mysql://localhost:3306/ourobouros_sql";
-		
-		Connection 	con	 =	null;
-		Statement stmt = null;
-		
+		Connection connection  = ConnectToBDD.getConnection();
+		String sql = "INSERT INTO `produit` (`idProduit`, `nomProduit`, `prixuniProduit`) VALUES (NULL, 'pomme', '1.5')";
+		try
 		{
-			try
-			 {
-				con = DriverManager.getConnection(URL,LOGIN,PASSWORD);
-				stmt=con.createStatement();
-				System.out.println(	"Je suis connectée. Je vais lancer ma requête");
-			 }
-			catch
-			 (	final SQLException e) 
-			{
-				e.printStackTrace();
-			} 
-			finally
-			{
-				{	
-					if(stmt	!=	null) 
-					{
-						try
-						{
-							stmt.close();
-							// Le stmt.closeferme automatiquement le rset.
-							System.out.println(	"Je ferme l'accès à la BdD");
-						} 
-						catch (final SQLException e) 
-						{
-							e.printStackTrace();
-						}
-					}
-					if(con != null)
-					{
-						try
-						{
-							con.close();
-						} 
-						catch (	final SQLException e) 
-						{
-							e.printStackTrace();
-						}
-					}
-				}
-			}
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			System.out.println("Requete SQL faite.");
+			rs.close();
 		}
-
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
+
