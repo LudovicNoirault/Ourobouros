@@ -14,14 +14,12 @@ import ouroboros.ecrans.PremierEcran;
  * @author user
  */
 public class Main
-	{
-	
-		public static void main(String[] args)
-		{
-			
-	        Ecran eAccueil = new Ecran();
-	        PremierEcran premierEcran = new PremierEcran();
-	        premierEcran.ParametresPremierEcran(eAccueil);
-	        eAccueil.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	    }
+{
+	public static void main(String[] args)
+	{		
+		Ecran eAccueil = new Ecran();
+	    PremierEcran premierEcran = new PremierEcran();
+	    premierEcran.ParametresPremierEcran(eAccueil);
+	    eAccueil.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
+}
