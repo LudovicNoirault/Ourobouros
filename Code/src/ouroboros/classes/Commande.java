@@ -1,4 +1,4 @@
-package main;
+package ouroboros.classes;
 
 public class Commande {
 	private int id_Commande;

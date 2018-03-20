@@ -1,4 +1,4 @@
-package main;
+package ouroboros.sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class ConnectToBDD
 	private static final ConnectToBDD instance = new ConnectToBDD();
 	private static Connection connection;
 /*
-* méthode pour se connecter à la base de données
+* mï¿½thode pour se connecter ï¿½ la base de donnï¿½es
 */
 	public ConnectToBDD() 
 	{

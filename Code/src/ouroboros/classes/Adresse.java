@@ -1,7 +1,7 @@
-package main;
+package ouroboros.classes;
 
 public class Adresse {
-	private int numero;
+    private int numero;
     private String rue;
     private String ville;
     private int code_postal;

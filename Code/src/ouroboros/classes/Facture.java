@@ -1,4 +1,4 @@
-package main;
+package ouroboros.classes;
 
 public class Facture {
 	private int id_Facture;

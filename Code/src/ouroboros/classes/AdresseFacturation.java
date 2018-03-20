@@ -1,4 +1,4 @@
-package main;
+package ouroboros.classes;
 
 public class AdresseFacturation extends Adresse{
 	private int id_Adresse_Facturation;

@@ -1,4 +1,4 @@
-package main;
+package ouroboros.classes;
 
 public class Client {
 	private int id_Client;

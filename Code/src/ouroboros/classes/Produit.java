@@ -1,4 +1,4 @@
-package main;
+package ouroboros.classes;
 
 public class Produit {
 	private int id_Produit;
