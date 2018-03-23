@@ -23,8 +23,10 @@ import ouroboros.sql.ListeClient;
  *
  * @author user
  */
-public class EcranClient {
-        public static void ParametresEcranClient(Ecran ecran){
+public class EcranClient
+{
+	public static void ParametresEcranClient(Ecran ecran)
+        {
         ecran.setTitle("Ouroboros");
         ecran.setSize(300,200);
         ecran.setLocation(450,165);
@@ -46,63 +48,43 @@ public class EcranClient {
         Ecran clientUpdate = new Ecran();
         Ecran clientRead = new Ecran();
         Ecran clientDelete = new Ecran();
+        
         clientBtnCreate.addActionListener(new ActionListener()
-
 		{
-
 			public void actionPerformed(ActionEvent e)
-
 			{
-                                EcranClientCreate ecranClientCreate = new EcranClientCreate();
+                EcranClientCreate ecranClientCreate = new EcranClientCreate();
 				ecranClientCreate.ParametresClientCreate(clientCreate);
-
 			}
-
 		});
+        
         clientBtnUpdate.addActionListener(new ActionListener()
-
 		{
-
 			public void actionPerformed(ActionEvent e)
-
 			{
-
 				EcranClientUpdate ecranClientUpdate = new EcranClientUpdate();
 				ecranClientUpdate.ParametresClientUpdate(clientUpdate);
-
 			}
-
 		});
+        
         clientBtnRead.addActionListener(new ActionListener()
-
 		{
-
 			public void actionPerformed(ActionEvent e)
-
 			{
-
 				EcranClientRead ecranClientRead = new EcranClientRead();
 				ListeClient listeClient = new ListeClient();
 				List<String> liste = listeClient.lireListeClient();
-				ecranClientRead.ParametresClientRead(clientRead, liste);
-
+				ecranClientRead.ParametresClientRead(clientRead,liste);
 			}
-
-		});
-        clientBtnDelete.addActionListener(new ActionListener()
-
-		{
-
-			public void actionPerformed(ActionEvent e)
-
-			{
-
-				EcranClientDelete ecranClientDelete = new EcranClientDelete();
-				ecranClientDelete.ParametresClientDelete(clientDelete);
-
-			}
-
 		});
         
+        clientBtnDelete.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				EcranClientDelete ecranClientDelete = new EcranClientDelete();
+				ecranClientDelete.ParametresClientDelete(clientDelete);
+			}
+		});       
     }
 }
