@@ -9,11 +9,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import ouroboros.classes.Ecran;
+import ouroboros.sql.ListeClient;
 
 
 /**
@@ -79,7 +82,9 @@ public class EcranClient {
 			{
 
 				EcranClientRead ecranClientRead = new EcranClientRead();
-				ecranClientRead.ParametresClientRead(clientRead);
+				ListeClient listeClient = new ListeClient();
+				List<String> liste = listeClient.lireListeClient();
+				ecranClientRead.ParametresClientRead(clientRead, liste);
 
 			}
 
