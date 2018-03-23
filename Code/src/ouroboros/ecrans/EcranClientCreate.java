@@ -32,7 +32,7 @@ public class EcranClientCreate
 		clientCreate.setVisible(true);
 		JPanel panelInfosClientCreate = new JPanel();
 		panelInfosClientCreate.setLayout(new BoxLayout(panelInfosClientCreate, BoxLayout.PAGE_AXIS));
-		clientCreate.setTitle("Création d'un nouveau client");
+		clientCreate.setTitle("Crï¿½ation d'un nouveau client");
 		clientCreate.setSize(735,250);
 		clientCreate.setLocation(200,120);
 		JLabel titre = new JLabel("Veuillez saisir les informations relatives au client.");

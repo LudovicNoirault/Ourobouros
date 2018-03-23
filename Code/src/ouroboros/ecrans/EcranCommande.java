@@ -7,6 +7,8 @@ package ouroboros.ecrans;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -19,22 +21,39 @@ import ouroboros.classes.Ecran;
  */
 public class EcranCommande {
     public static void ParametresEcranCommande(Ecran ecran){
-        ecran.setTitle("Ouroboros");
+                ecran.setTitle("Ouroboros");
         ecran.setSize(300,200);
         ecran.setLocation(450,165);
         JPanel commandePanel = new JPanel();
         JButton commandeBtnCreate = new JButton("Ajouter une nouvelle commande");	
-        JButton commandeBtnUpdate = new JButton("Modifier les infos d'une commande");		
-        JButton commandeBtnRead = new JButton("Consulter une commande");
-        JButton commandeBtnDelete = new JButton("Supprimer une commande");
+        JButton commandeBtnListe = new JButton("Sélection des commandes");		
         JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
         commandePanel.add(commandeBtnCreate);
-        commandePanel.add(commandeBtnUpdate);
-        commandePanel.add(commandeBtnRead);
-        commandePanel.add(commandeBtnDelete);
+        commandePanel.add(commandeBtnListe);
         ecran.add(logo, BorderLayout.CENTER); 
         commandePanel.setBackground(Color.DARK_GRAY);
         ecran.setContentPane(commandePanel);
         ecran.setVisible(true);
+        Ecran commandeCreate = new Ecran();
+        Ecran commandeListe = new Ecran();
+        
+        
+        commandeBtnCreate.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+                
+			}
+		});
+       
+        
+        commandeBtnListe.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				
+			}
+		});
+          
     }
 }

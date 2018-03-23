@@ -34,6 +34,7 @@ public class ListeClient
 	            while(rs.next())
 	            {
 	            	listeNomClient.add(rs.getString("nomClient"));
+                        
 	            }
 	            
 	            System.out.println("Requete SQL faite, retour :"+listeNomClient);

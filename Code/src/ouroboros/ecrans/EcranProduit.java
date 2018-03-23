@@ -7,6 +7,8 @@ package ouroboros.ecrans;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,17 +26,34 @@ public class EcranProduit {
         ecran.setLocation(450,165);
         JPanel produitPanel = new JPanel();
         JButton produitBtnCreate = new JButton("Ajouter un nouveau produit");	
-        JButton produitBtnUpdate = new JButton("Modifier les infos d'un produit");		
-        JButton produitBtnRead = new JButton("Consulter un produit");
-        JButton produitBtnDelete = new JButton("Supprimer un produit");
+        JButton produitBtnListe = new JButton("Sélection des produits");		
         JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
         produitPanel.add(produitBtnCreate);
-        produitPanel.add(produitBtnUpdate);
-        produitPanel.add(produitBtnRead);
-        produitPanel.add(produitBtnDelete);
+        produitPanel.add(produitBtnListe);
         ecran.add(logo, BorderLayout.CENTER); 
         produitPanel.setBackground(Color.DARK_GRAY);
         ecran.setContentPane(produitPanel);
         ecran.setVisible(true);
+        Ecran produitCreate = new Ecran();
+        Ecran produitListe = new Ecran();
+        
+        
+        produitBtnCreate.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+               
+			}
+		});
+       
+        
+        produitBtnListe.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				
+			}
+		});
+          
     }
 }

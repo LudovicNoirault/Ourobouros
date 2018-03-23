@@ -32,22 +32,17 @@ public class EcranClient
         ecran.setLocation(450,165);
         JPanel clientPanel = new JPanel();
         JButton clientBtnCreate = new JButton("Ajouter un nouveau client");	
-        JButton clientBtnUpdate = new JButton("Modifier les infos d'un client");		
-        JButton clientBtnRead = new JButton("Consulter la fiche d'un client");
-        JButton clientBtnDelete = new JButton("Supprimer un client");
+        JButton clientBtnListe = new JButton("Selection des clients");		
         JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
         clientPanel.add(clientBtnCreate);
-        clientPanel.add(clientBtnUpdate);
-        clientPanel.add(clientBtnRead);
-        clientPanel.add(clientBtnDelete);
+        clientPanel.add(clientBtnListe);
         ecran.add(logo, BorderLayout.CENTER); 
         clientPanel.setBackground(Color.DARK_GRAY);
         ecran.setContentPane(clientPanel);
         ecran.setVisible(true);
         Ecran clientCreate = new Ecran();
-        Ecran clientUpdate = new Ecran();
-        Ecran clientRead = new Ecran();
-        Ecran clientDelete = new Ecran();
+        Ecran clientListe = new Ecran();
+        
         
         clientBtnCreate.addActionListener(new ActionListener()
 		{
@@ -57,34 +52,18 @@ public class EcranClient
 				ecranClientCreate.ParametresClientCreate(clientCreate);
 			}
 		});
+       
         
-        clientBtnUpdate.addActionListener(new ActionListener()
+        clientBtnListe.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				EcranClientUpdate ecranClientUpdate = new EcranClientUpdate();
-				ecranClientUpdate.ParametresClientUpdate(clientUpdate);
-			}
-		});
-        
-        clientBtnRead.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				EcranClientRead ecranClientRead = new EcranClientRead();
+				EcranClientSelection ecranClientRead = new EcranClientSelection();
 				ListeClient listeClient = new ListeClient();
 				List<String> liste = listeClient.lireListeClient();
-				ecranClientRead.ParametresClientRead(clientRead,liste);
+				ecranClientRead.ParametresClientRead(clientListe,liste);
 			}
 		});
-        
-        clientBtnDelete.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				EcranClientDelete ecranClientDelete = new EcranClientDelete();
-				ecranClientDelete.ParametresClientDelete(clientDelete);
-			}
-		});       
+             
     }
 }
