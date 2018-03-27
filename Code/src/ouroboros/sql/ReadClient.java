@@ -22,22 +22,22 @@ public class ReadClient
     public static void recupererClient(String nomClient)
     {
     	//from client
-    	String retournomClient;
-    	String retournomDirigeantClient;
+    	String retournomClient ="";
+    	String retournomDirigeantClient =""; 
     	int retouridAdresseFacture =0;
     	int retouridAdresseLivraison =0;
     	//from adresseLivraison
     	int retournumeroAdresseLivraison =0;
-    	String retourrueAdresseLivraison;
-    	String retourvilleAdresseLivraison;
+    	String retourrueAdresseLivraison ="";
+    	String retourvilleAdresseLivraison="";
     	int retourcodePostalAdresseLivraison =0;
-    	String retourpaysAdresseLivraison;
+    	String retourpaysAdresseLivraison="";
     	//from adresseFacturation
     	int retournumeroAdresseFacture =0;
-    	String retourrueAdresseFacture ;
-    	String retourvilleAdresseFacture ;
+    	String retourrueAdresseFacture ="";
+    	String retourvilleAdresseFacture ="";
     	int retourcodePostalAdresseFacture =0;
-    	String retourpaysAdresseFacture;
+    	String retourpaysAdresseFacture="";
     	
     	Ecran clientFiche = new Ecran();
     	
