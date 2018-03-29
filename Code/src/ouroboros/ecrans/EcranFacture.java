@@ -26,7 +26,7 @@ public class EcranFacture {
         ecran.setLocation(450,165);
         JPanel facturePanel = new JPanel();
         JButton factureBtnCreate = new JButton("Ajouter une nouvelle facture");	
-        JButton factureBtnListe = new JButton("Sélection des factures");		
+        JButton factureBtnListe = new JButton("Selection des factures");		
         JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
         facturePanel.add(factureBtnCreate);
         facturePanel.add(factureBtnListe);

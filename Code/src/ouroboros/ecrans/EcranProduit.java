@@ -26,7 +26,7 @@ public class EcranProduit {
         ecran.setLocation(450,165);
         JPanel produitPanel = new JPanel();
         JButton produitBtnCreate = new JButton("Ajouter un nouveau produit");	
-        JButton produitBtnListe = new JButton("Sélection des produits");		
+        JButton produitBtnListe = new JButton("Selection des produits");		
         JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
         produitPanel.add(produitBtnCreate);
         produitPanel.add(produitBtnListe);

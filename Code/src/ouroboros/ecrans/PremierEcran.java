@@ -26,11 +26,11 @@ public class PremierEcran
     public static void ParametresPremierEcran(Ecran ecran)
     {
     	ecran.setTitle("Ouroboros");
-	    ecran.setSize(600,400);
+	    ecran.setSize(750,500);
 	    ecran.setLocation(300,50);
 	
 	    JPanel accueilPanel = new JPanel(new GridLayout(3,1));
-	    JLabel slogan = new JLabel ("Ourobouros, votre solution de gestion quel est bien");
+	    JLabel slogan = new JLabel ("Ourobouros, Votre solution de gestion qu'elle est bien");
 	    
 	    slogan.setForeground(Color.WHITE);
 	    

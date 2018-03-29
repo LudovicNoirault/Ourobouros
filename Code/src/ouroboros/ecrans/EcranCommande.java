@@ -19,14 +19,16 @@ import ouroboros.classes.Ecran;
  *
  * @author user
  */
-public class EcranCommande {
-    public static void ParametresEcranCommande(Ecran ecran){
-                ecran.setTitle("Ouroboros");
+public class EcranCommande 
+{
+    public static void ParametresEcranCommande(Ecran ecran)
+    {
+        ecran.setTitle("Ouroboros");
         ecran.setSize(300,200);
         ecran.setLocation(450,165);
         JPanel commandePanel = new JPanel();
         JButton commandeBtnCreate = new JButton("Ajouter une nouvelle commande");	
-        JButton commandeBtnListe = new JButton("Sélection des commandes");		
+        JButton commandeBtnListe = new JButton("Selection des commandes");		
         JLabel logo = new JLabel(new ImageIcon("logoOuroboros.png"));
         commandePanel.add(commandeBtnCreate);
         commandePanel.add(commandeBtnListe);
