@@ -21,8 +21,9 @@ import ouroboros.sql.CreateClient;
  *
  * @author user
  */
-public class EcranClientRead {
-        public static void ParametresClientRead(Ecran ecran, String nom1, String nomboss, int numeroRueLivr, String nomRueLivr, String nomVilleLivr, int codePostLivr, String nomPaysLivr,int numeroRueFact, String nomRueFact, String nomVilleFact, int codePostFact, String nomPaysFact)
+public class EcranClientRead 
+{
+	public static void ParametresClientRead(Ecran ecran, String nom1, String nomboss, String numeroRueLivr, String nomRueLivr, String nomVilleLivr, String codePostLivr, String nomPaysLivr,String numeroRueFact, String nomRueFact, String nomVilleFact, String codePostFact, String nomPaysFact)
     {
         JFrame clientCreate = new JFrame();
 		JPanel panelGeneralClientCreate = new JPanel();
@@ -60,11 +61,11 @@ public class EcranClientRead {
 		rueLivr.setEditable(false);
 		rueLivr.setColumns(10);
 		JLabel labelcodePostalLivr  = new JLabel("Code Postal : ");
-		JTextField codePostalLivr = new JTextField(nomVilleLivr);
+		JTextField codePostalLivr = new JTextField(codePostLivr);
 		codePostalLivr.setEditable(false);
 		codePostalLivr.setColumns(10);
 		JLabel labelvilleLivr  = new JLabel("Ville : ");
-		JTextField villeLivr = new JTextField(codePostLivr);
+		JTextField villeLivr = new JTextField(nomVilleLivr);
 		villeLivr.setEditable(false);
 		villeLivr.setColumns(10);
 		JLabel labelpaysLivr  = new JLabel("Pays : ");
@@ -93,11 +94,11 @@ public class EcranClientRead {
 		rueFact.setEditable(false);
 		rueFact.setColumns(10);
 		JLabel labelcodePostalFact  = new JLabel("Code Postal : ");
-		JTextField codePostalFact = new JTextField(nomVilleFact);
+		JTextField codePostalFact = new JTextField(codePostFact);
 		codePostalFact.setEditable(false);
 		codePostalFact.setColumns(10);
 		JLabel labelvilleFact  = new JLabel("Ville : ");
-		JTextField villeFact = new JTextField(codePostFact);
+		JTextField villeFact = new JTextField(nomVilleFact);
 		villeFact.setEditable(false);
 		villeFact.setColumns(10);
 		JLabel labelpaysFact  = new JLabel("Pays : ");

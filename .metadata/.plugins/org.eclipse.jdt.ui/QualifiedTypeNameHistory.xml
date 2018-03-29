@@ -22,4 +22,7 @@
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="ouroboros.sql.UpdateClient"/>
+<fullyQualifiedTypeName name="ouroboros.ecrans.EcranClientUpdate"/>
+<fullyQualifiedTypeName name="ouroboros.sql.DeleteClient"/>
 </qualifiedTypeNameHistroy>

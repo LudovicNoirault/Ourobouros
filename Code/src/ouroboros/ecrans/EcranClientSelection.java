@@ -17,7 +17,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import ouroboros.classes.Ecran;
+import ouroboros.sql.DeleteClient;
 import ouroboros.sql.ReadClient;
+import ouroboros.sql.UpdateClient;
 
 /**
  *
@@ -33,7 +35,7 @@ public class EcranClientSelection
     	clientSelection.setContentPane(panelSelectionClientGeneral);
     	clientSelection.setVisible(true);
     	
-        clientSelection.setTitle("Sélection d'un client");
+        clientSelection.setTitle("Selection d'un client");
         clientSelection.setSize(485,300);
     	clientSelection.setLocation(480,180);
 
@@ -49,7 +51,7 @@ public class EcranClientSelection
               
     	}
         JButton clientRead = new JButton("Consulter la fiche client");
-        JButton clientUpdate = new JButton("Mettre à jour la fiche client");
+        JButton clientUpdate = new JButton("Mettre a� jour la fiche client");
         JButton clientDelete = new JButton("Supprimer la fiche client");
         
         panelSelectionClientList.add(listeDeroulanteClients);
@@ -59,23 +61,36 @@ public class EcranClientSelection
         panelSelectionClientList.add(clientDelete);
         
         panelSelectionClientGeneral.add(panelSelectionClientList);
-        clientRead.addActionListener(new ActionListener(){
-	            public void actionPerformed(ActionEvent e)
-                    {
-                        String select = (String) listeDeroulanteClients.getSelectedItem();
-                        //System.out.println(select);
-                        ReadClient readClient = new ReadClient();
-                        readClient.recupererClient(select);
-                    }
+        clientRead.addActionListener(new ActionListener()
+        {
+        	public void actionPerformed(ActionEvent e)
+            {
+        		String select = (String) listeDeroulanteClients.getSelectedItem();
+                //System.out.println(select);
+                ReadClient readClient = new ReadClient();
+                readClient.recupererClient(select);
+            }
 	    });
-        clientUpdate.addActionListener(new ActionListener(){
-	            public void actionPerformed(ActionEvent e){
-			
+        
+        clientUpdate.addActionListener(new ActionListener()
+        {
+        	public void actionPerformed(ActionEvent e)
+	        {
+        		String select = (String) listeDeroulanteClients.getSelectedItem();
+                //System.out.println(select);
+                UpdateClient updateClient = new UpdateClient();
+                updateClient.recupererClient(select);
 	        }
 	    });
-        clientDelete.addActionListener(new ActionListener(){
-	            public void actionPerformed(ActionEvent e){
-			
+        
+        clientDelete.addActionListener(new ActionListener()
+        {
+        	public void actionPerformed(ActionEvent e)
+	        {
+        		String select = (String) listeDeroulanteClients.getSelectedItem();
+                System.out.println(select);
+                DeleteClient deleteClient = new DeleteClient();
+                deleteClient.supprimerClient(select);            	
 	        }
 	    });
     }        

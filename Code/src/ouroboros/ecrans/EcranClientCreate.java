@@ -113,25 +113,28 @@ public class EcranClientCreate
 		panelGeneralClientCreate.add(panelAdresseLivraisonClientCreate);
 		panelGeneralClientCreate.add(panelAdresseFactureClientCreate);
 	        panelGeneralClientCreate.add(panelBtnClientCreate);
-	        validerClient.addActionListener(new ActionListener(){
-	            public void actionPerformed(ActionEvent e){
-			int inptNumAdreFact = Integer.parseInt(numRueFact.getText());
-			String inptRueAdreFact = rueFact.getText();	
-			String inptVilleAdreFact = villeFact.getText();
-			int inptCpAdreFact =  Integer.parseInt(codePostalFact.getText());
-			String inptPaysAdreFact = paysFact.getText();
-			int inptNumAdreLivr = Integer.parseInt(numRueLivr.getText());
-			String inptRueAdreLivr = rueLivr.getText();
-			String inptVilleAdreLivr = villeLivr.getText();
-			int inptCpAdreLivr =  Integer.parseInt(codePostalLivr.getText());
-			String inptPaysAdreLivr = paysLivr.getText();
-			String inptNomClient = nomClient.getText();
-			String inptNomDirecteur= nomDirecteur.getText();
-			ConnectToBDD connection = new ConnectToBDD();
-			connection.getConnection();
-	                CreateClient nouveauClient = new CreateClient();
-			nouveauClient.creerNouveauClient(inptNumAdreFact,inptRueAdreFact,inptVilleAdreFact,inptCpAdreFact,inptPaysAdreFact, inptNumAdreLivr,inptRueAdreLivr,inptVilleAdreLivr,inptCpAdreLivr,inptPaysAdreLivr, inptNomClient, inptNomDirecteur);
+	        validerClient.addActionListener(new ActionListener()
+	        {
+	            public void actionPerformed(ActionEvent e)
+	            {
+					int inptNumAdreFact = Integer.parseInt(numRueFact.getText());
+					String inptRueAdreFact = rueFact.getText();	
+					String inptVilleAdreFact = villeFact.getText();
+					int inptCpAdreFact =  Integer.parseInt(codePostalFact.getText());
+					String inptPaysAdreFact = paysFact.getText();
+					int inptNumAdreLivr = Integer.parseInt(numRueLivr.getText());
+					String inptRueAdreLivr = rueLivr.getText();
+					String inptVilleAdreLivr = villeLivr.getText();
+					int inptCpAdreLivr =  Integer.parseInt(codePostalLivr.getText());
+					String inptPaysAdreLivr = paysLivr.getText();
+					String inptNomClient = nomClient.getText();
+					String inptNomDirecteur= nomDirecteur.getText();
+					ConnectToBDD connection = new ConnectToBDD();
+					connection.getConnection();
+		            CreateClient nouveauClient = new CreateClient();
+		            nouveauClient.creerNouveauClient(inptNumAdreFact,inptRueAdreFact,inptVilleAdreFact,inptCpAdreFact,inptPaysAdreFact, inptNumAdreLivr,inptRueAdreLivr,inptVilleAdreLivr,inptCpAdreLivr,inptPaysAdreLivr, inptNomClient, inptNomDirecteur);
+		        }
 	        }
-	    });
+	    );
     }
 }
